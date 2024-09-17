@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace cSharpInfosoftTutorial
+namespace cSharpInfosoftTutorial.oopBasics
 {
     class constructorClass
     {

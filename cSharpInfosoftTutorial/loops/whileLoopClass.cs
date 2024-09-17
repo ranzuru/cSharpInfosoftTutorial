@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace cSharpInfosoftTutorial
+namespace cSharpInfosoftTutorial.loops
 {
     class whileLoopClass
     {
@@ -22,16 +22,18 @@ namespace cSharpInfosoftTutorial
             if (parity.Equals("a", StringComparison.InvariantCultureIgnoreCase))
             {
                 Console.WriteLine("Odd Number/s of from 1 to " + num + ":");
-            } else Console.WriteLine("Even Number/s of from 1 to " + num + ":");
+            }
+            else Console.WriteLine("Even Number/s of from 1 to " + num + ":");
 
             while (i <= num)
             {
                 if (parity.Equals("a", StringComparison.InvariantCultureIgnoreCase))
                 {
-                    
+
                     if (i % 2 != 0) Console.WriteLine(i);
-                    
-                } else if (parity.Equals("b", StringComparison.InvariantCultureIgnoreCase))
+
+                }
+                else if (parity.Equals("b", StringComparison.InvariantCultureIgnoreCase))
                 {
                     if (i % 2 == 0) Console.WriteLine(i);
                 }

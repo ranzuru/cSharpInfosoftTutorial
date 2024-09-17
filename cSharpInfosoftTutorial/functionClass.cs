@@ -55,7 +55,8 @@ namespace cSharpInfosoftTutorial
                 Console.WriteLine("\nResult of Division: " + result);
             }
         }
-
+        // function overloading - using the same function name but with different paramters (by data type/s or how many)
+        // within the same class
         static double add(double[] storedEntry)
         {
             double sum = 0;

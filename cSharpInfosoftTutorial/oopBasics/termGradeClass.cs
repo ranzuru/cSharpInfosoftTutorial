@@ -5,7 +5,7 @@ using System.Runtime.Intrinsics.X86;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace cSharpInfosoftTutorial
+namespace cSharpInfosoftTutorial.oopBasics
 {
     class termGradeClass
     {
