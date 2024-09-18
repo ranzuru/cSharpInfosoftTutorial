@@ -8,7 +8,7 @@ namespace cSharpInfosoftTutorial
 {
     class conditionalStatementClass
     {
-        public static void Conditional()
+        public static void Main()
         {
             Console.WriteLine("BSIT Average Grade Calculator");
             Console.Write("Web Development: ");

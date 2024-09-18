@@ -1,0 +1,330 @@
+// INTRODUCTION =============================================================
+// use \n to make new line
+Console.Write("sample");        // Single 
+Console.Write("Output");        // Line
+Console.WriteLine("sample");    // New Line after
+
+// VARIABLES & DATA TYPES ===================================================
+/* 
+ * Declaration:
+ * dataype identifier;
+ * dataype identifier = value ;
+ * datatype identifier1, identifier2; 
+ * datatype identifier1 = value, identifier2 = value;
+ * dataype itentifier; (next line) identifier = value;
+*/
+
+string sampleString = "sample";     // Alphanumeric in text format (Double Quotation)
+char sampleChar = 'S';              // Single character (single quoatation)
+int sampleInt = 1;                  // Whole Number/s
+long sampleLong = 1L;               // Whole Number/s, (uses L to identify if it is long)
+double sampleDouble = 0.1;          // Decimal format (with or without D in the end), precise decimal about 15, more precise one
+float sampleFloat = 1.1f;           // Decimal format (with f in the end), precise decimal about 6/7
+bool sampleBool = true;             // can be true or false
+
+/*
+ * Concatenation ("" + ""/''/int):
+ * "sample" + "Output", result: sampleOutput/ "2" + "3". result: 23 
+ * note: during concat, if any of the value is string, the remaining value will be converted to string.
+ * not Concat: int + int (results to arithmetic)/ char + int (char converts to ASCII which results into arithmetic)
+*/
+
+// BASIC I/O ==============================================================
+// write and writeline display output using Enter key
+
+string x;
+char y;
+Console.WriteLine("enter text: ");
+x = Console.ReadLine();                   // input multiple characters
+Console.WriteLine(x);
+Console.WriteLine("enter char: ");
+y = (char)Console.Read();                // input single character | Typecasting, ex. (char)
+//y = Console.ReadKey().KeyChar;              // input single character | Display output using Enter key or between a-z keys
+Console.WriteLine(y);
+
+// Note: if entering a character on an int variable using Read, it will display its ASCII value
+
+// OPERATORS AND EXPRESSIONS ==============================================
+/*
+ * Arithmetic Operators                 | Assignment Arithmetic Operators
+ * +,                       x+y         |   +=, x+=y
+ * -,                       x-y         |   -=, x-=y
+ * * (multiplication),      x*y         |   *=, x*=y
+ * / (division),            x/y         |   /=, x/=y
+ * % (modulus/ remainder),  5%2 = 1     |   %=, x%=y
+ * ++ (increment/ +1),      5++ = 6     |
+ * -- (decrement/ -1),      5-- = 4     |
+ * Arithmetic Operators and its designated Assignment Arithmetic Operators has the same result.
+ */
+
+int x = 5, y = 10;
+int result = x + y / 2; // result: y/2 =5+x =10
+
+/*
+ * Note: use parenthesis to change the flow of formula. 
+ * Ex. (x+y)/2, x+y =15/2 =7 or 7.5
+ */
+
+/*
+ * Comparison Operators 
+ * == (equal), 1 == 1 
+ * <
+ * >
+ * <= 
+ * >=
+ * != (note equal), 1 != 2
+ * 
+ * Logical Operators
+ * && (and), all of the conditions are tru
+ * || (or), one of the conditions are true
+ * ! (not), reverses the result such as returns false if the condition/s is/are true.
+ */
+
+// CONDITIONAL STATEMENTS ===============================================
+/*
+ * if/ else if (condition) | apply the Comparison and/ or Logical operators to define the condition.
+ * Ex. if age
+ * if - primary condition
+ * else if - secondary condition, it can none or more
+ * else - default, makes the result of the conditional statements if if and if else statement/s fails.
+ */
+
+Console.Write("Your Age: ");
+// converts the input from string to int from the Write
+int age = Convert.ToInt32(Console.ReadLine());
+// short hand method of if statement (it can be applicable if the scope of the conditional statement is only 1 line
+if (age >= 18)  Console.WriteLine("Teen");
+else if (age > 18)
+{
+    Console.WriteLine("Adult");
+} else
+{
+    /*
+     * Nested Condition, it occurs when putting conditional statement within the conditional statement.
+     * It can be applied on if/ if else/ else conditions.
+     */
+    if (age >= 13) Console.WriteLine("Child");
+    else Console.WriteLine("Access Denied");
+}
+
+/*
+ * .equals(Enter the value) is the same as ==
+ * ,StringComparison.InvariantCultureIgnoreCase ignores case in the condition.
+ * Ex. .equals(Enter the value, StringComparison.InvariantCultureIgnoreCase)
+ */
+// SWTICH STATEMENTS ====================================================
+/*
+ * switch(variable){
+ * case value1:
+ * put code here
+ *  break;
+ * case value2:
+ *  break;
+ * default:
+ * break;
+ *  
+ * Note: each case should have break, else it would read the last case or error. Each value should be unique per switch.
+ * Ex. case value1 have no break, when switch executes, it only reads the value1 but the result will be from the value2.
+ * 
+ * variable from switch should be either of the following:
+ * string, char, int, enumerators
+ * 
+ * break - if variable has value1, it would stop the switch
+ * default - if the variable did not match on the given cases value, it would be the one to give the output
+ */
+
+Console.Write("Month: ");
+int month = Convert.ToInt32(Console.ReadLine());
+Console.Write("Day: ");
+int day = Convert.ToInt32(Console.ReadLine());
+Console.Write("Year: ");
+int year = Convert.ToInt32(Console.ReadLine());
+string monthName;
+
+switch (month)
+{
+    case 1:
+        monthName = "January";
+        break;
+    case 2:
+        monthName = "February";
+        break;
+    case 3:
+        monthName = "March";
+        break;
+    case 4:
+        monthName = "April";
+        break;
+    case 5:
+        monthName = "May";
+        break;
+    case 6:
+        monthName = "June";
+        break;
+    case 7:
+        monthName = "July";
+        break;
+    case 8:
+        monthName = "August";
+        break;
+    case 9:
+        monthName = "September";
+        break;
+    case 10:
+        monthName = "October";
+        break;
+    case 11:
+        monthName = "November";
+        break;
+    case 12:
+        monthName = "December";
+        break;
+    default:
+        monthName = "";
+        Console.WriteLine("\nInvalid Month Input");
+        if (day > 31) Console.WriteLine("Invalid Day Input");
+        break;
+}
+
+if (month == 2)
+{
+    if (day > 29) Console.WriteLine("\nThe month of " + monthName + "[" + month + "] has only 29 days");
+    else Console.WriteLine("\n" + monthName + " " + day + ", " + year);
+}
+else if (month == 4 || month == 6 || month == 9 || month == 11)
+{
+    if (day > 30) Console.WriteLine("\nThe month of " + monthName + "[" + month + "] has only 30 days");
+    else Console.WriteLine("\n" + monthName + " " + day + ", " + year);                  
+}
+else if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12)
+{
+    if (day > 31) Console.WriteLine("\nThe month of " + monthName + "[" + month + "] has only 31 days");
+    else Console.WriteLine("\n" + monthName + " " + day + ", " + year);
+}
+
+// LOOPS ==================================================================
+// while(condition){}, it reads the condition before giving output
+int i = 0;
+string[] name = { "Ingram", "Jules", "Nick", "Arlene", "Billy"};
+// .length (name.length<5) allows the condition to count the total indexes inside an array
+while (i<5)
+{
+    // Iterating Arrays - reads every element inside the array, array index starts at 0
+    Console.WriteLine(name[i]);
+    // apply increment/ decrement to reach the condition's limit or it would be an infinite loop
+    i++;
+    // break;
+}
+// do{}while(condition), gives output after reading the condition
+do
+{
+    Console.WriteLine(name[i]);
+    i++;
+}while (i<5);
+
+/*
+ * break; - stops the loop (refer above)
+ * continue; - skips the matched condition
+ * Note:
+ * you can place condition/s inside the loops to identify which value should stop the loop or will be skipped from the loop. It can be while/ do while/ for loop
+ */
+
+// for(initialization; condition; operation){}, more compact format of while loop
+for (int j = 0; j < 5; j++)
+{
+    Console.WriteLine(j);
+    // for iterating arrays, change the WriteLine output, refer above
+    // for .length, change the condtion and WriteLine such as name.length
+}
+
+// ARRAYS ===================================================================
+/*
+ * Declaration:
+ * datatype[] identifier = {val1, val2, val3}, with value
+ * datatype[] identifier = new datatype[size], without value, the size should be int, both datatype should be the same
+ */
+
+string[] name = { "Ingram", "Jules", "Nick", "Arlene", "Billy" };
+string[] grade = new string[5];
+// array index start at 0, ex. 0 = ingram, 1= jules, ...
+
+/*
+ * Reading
+ * identifier[index]
+ * Assigning
+ * identifier[index] = value
+ */
+
+Console.WriteLine(name[0]); // ingram
+name[0] = "Ivan"; // overwrite ingram, you can either overwrite or store it from a empty array
+Console.Write("Name: ");
+name[1] = Console.ReadLine(); // overwriting jules
+// apply convert to the readline to convert the input value
+
+
+// FUNCTIONS =========================================================================================a
+namespace cSharpInfosoftTutorial
+{
+    class Program
+    {
+        // for global variable, it should have static before the datatype
+        static string greetings = "Greetings";
+        static void Main(string[] args)
+        {
+            sayHello();
+            Console.WriteLine(greetings);
+            sayGoodday("Good Day!");
+            Console.WriteLine(saySalutations("Salutations!"));
+        }
+
+        // modifiers returntype methodName(){}, they should be inside the class
+        // void - no return value
+        // int - returns int
+        // string - returns string and so on
+        /*
+         * Variable scoping:
+         * global, declared within the class and accessible to the whole class
+         * local, declared within the method, condition, loops, and any code block and accessible within that method, ..
+         */
+        static void sayHello()
+        {
+            // local variable, only accessible within this sayHello method
+            string sayHello = "Hello";
+            Console.WriteLine(sayHello);
+
+            if (sayHello == "Hello")
+            {
+                // this local variable is accessible within this condition only
+                string sayHello2 = "Hello2";
+                Console.WriteLine(sayHello2);
+            }
+        }
+        // single line comment
+        /*
+         * multi line comment       
+         */
+
+        // modifiers returntype methodName(parameters){}
+        static void sayGoodday(string goodDay)
+        {
+            Console.WriteLine(goodDay);
+        }
+
+        /*
+         * parameters can be 1 or more using comma
+         * parameters can be combination of different datatypes
+         */
+
+        // modifiers returntype methodName(arguments){return value}, arguments if method has return value
+        // arguments can be 1 or more using comma and combination of different dataypes
+        static string saySalutations(string salutations)
+        {    
+            return salutations;
+        }
+   }
+}
+
+Studied Lessons with Output:
+ * Lesson 14: Abstraction | OOP
+ * Lesson 15: Exception Handling
+ * Lesson 16: Collections (List and Dictionary)

@@ -8,7 +8,7 @@ namespace cSharpInfosoftTutorial
 {
     class switchClass
     {
-        public static void Switch()
+        public static void Main()
         {
             Console.Write("Month: ");
             int month = Convert.ToInt32(Console.ReadLine());

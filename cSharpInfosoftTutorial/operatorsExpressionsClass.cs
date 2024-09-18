@@ -8,7 +8,7 @@ namespace cSharpInfosoftTutorial
 {
     internal class operatorsExpressionsClass
     {
-        public static void OpEx()
+        public static void Main()
         {
             Console.WriteLine("BSIT Average Grade Calculator");
             Console.Write("Web Development: ");

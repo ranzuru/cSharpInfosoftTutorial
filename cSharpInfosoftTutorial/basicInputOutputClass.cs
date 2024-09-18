@@ -9,7 +9,7 @@ namespace cSharpInfosoftTutorial
      class basicInputOutputClass
     {
         // change to Main to run
-        public static void BasicIO()
+        public static void Main()
         {
             string name, coll, prog;
 

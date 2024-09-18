@@ -8,7 +8,7 @@ namespace cSharpInfosoftTutorial.loops
 {
     class forLoopClass
     {
-        public static void ForLoop()
+        public static void Main()
         {
             string[] userName = { "johnrancelb26", "j.batulan", "ranc333l" };
             string[] password = { "SweetTooth33", "GlibPayment22", "5ff5r" };

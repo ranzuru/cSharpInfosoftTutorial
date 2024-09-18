@@ -8,7 +8,7 @@ namespace cSharpInfosoftTutorial.loops
 {
     class whileLoopClass
     {
-        public static void WhileLoop()
+        public static void Main()
         {
             Console.WriteLine("Odd/ Even Calculator");
             Console.WriteLine("Parities \na. Odd \nb. Even");

@@ -8,7 +8,7 @@ namespace cSharpInfosoftTutorial
 {
     class variabesDatatypesClass
     {
-        public static void VarDt()
+        public static void Main()
         {
             string name = "John";
             int age = 23;

@@ -9,7 +9,7 @@ namespace cSharpInfosoftTutorial
     class functionClass
     {
         static double result;
-        public static void FunctionMain()
+        public static void Main()
         {
             Console.WriteLine("Arithmetic Operator utilizing Array");
             

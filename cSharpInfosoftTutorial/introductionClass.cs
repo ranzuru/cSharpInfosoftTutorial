@@ -8,7 +8,7 @@ namespace cSharpInfosoftTutorial
 {
     class introductionClass
     {
-        public static void Introduction()
+        public static void Main()
         {
 
             Console.WriteLine("sample");    

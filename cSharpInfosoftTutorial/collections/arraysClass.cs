@@ -4,12 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace cSharpInfosoftTutorial
+namespace cSharpInfosoftTutorial.collections
 {
     class arraysClass
     {
-        public static void Array()
+        public static void Main()
         {
+            // {value}, value can be a collection
+            // fixed size collection (for list reference)
             string[] movie = {"Inception", 
                               "Reservoir Dogs", 
                               "The Departed",

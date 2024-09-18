@@ -11,13 +11,18 @@ namespace cSharpInfosoftTutorial.polymorphism
         public static void Main()
         {
             Kriegsmarine bismarck = new Battleships();
-            Kriegsmarine grafZeppelin = new derivedClass.AircraftCarrier();
-            // overrides the armament method from kriegsmarine (base class) from derived class
+            Kriegsmarine grafZeppelin = new AircraftCarrier();
+            Kriegsmarine secondary = new Kriegsmarine();
+            
+            // overrides the armament method from kriegsmarine (base class) with derived class
             Console.WriteLine("Kriegsmarine Ship Information");
             Console.WriteLine("========================================\n");
             bismarck.armament();
+            // base class armament
+            secondary.armament();
             Console.WriteLine("\n");
             grafZeppelin.armament();
+            secondary.armament();
         }
     }
 
@@ -26,7 +31,7 @@ namespace cSharpInfosoftTutorial.polymorphism
         // virtual modifier allows the method (base class) to be overridden as as indicate it that it can be overridden
         virtual public void armament()
         {
-            Console.WriteLine("Secondary Armament #1: 105 mm/65 SK C/33 on a Dop. L. C/31 mount");
+            Console.WriteLine("Secondary Armament: 105 mm/65 SK C/33 on a Dop. L. C/31 mount");
         }
     }
 
@@ -40,7 +45,7 @@ namespace cSharpInfosoftTutorial.polymorphism
             Console.WriteLine("Captain        : Ernst Lindemann");
             Console.WriteLine("Armaments");
             Console.WriteLine("----------------------------------------");
-            Console.WriteLine("Main Battery   : 380 mm/52 SK C/34 on a Drh LC/34 mount");
+            Console.WriteLine("Main Battery      : 380 mm/52 SK C/34 on a Drh LC/34 mount");
         }
     }
 }
