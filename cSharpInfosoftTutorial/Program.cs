@@ -6,6 +6,8 @@ using cSharpInfosoftTutorial.encapsulation;
 using cSharpInfosoftTutorial.polymorphism;
 using cSharpInfosoftTutorial.abstraction;
 using cSharpInfosoftTutorial.collections;
+using cSharpInfosoftTutorial.events_and_delegates;
+using cSharpInfosoftTutorial.async_await_task;
 
 /* uncomment the line of code below to execute its function */
 
@@ -30,7 +32,7 @@ using cSharpInfosoftTutorial.collections;
 //inheritanceMainClass.Main();
 //encapsulationMainClass.Main();
 //polymorphismMainClass.Main();
-abstractionMainClass.Main();
+//abstractionMainClass.Main();
 
 //exceptionHandlingClass.Main();
 
@@ -38,3 +40,10 @@ abstractionMainClass.Main();
 //arraysClass.Main();
 //listClass.Main();
 //dictionaryClass.Main();
+
+// EVENTS AND DELEGATES
+delegatesClass.Main();
+//eventAndDelegateClass.Main();
+
+//await asyncAwaitTaskClass.Main();
+//workingWithStringClass.Main();

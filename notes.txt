@@ -325,6 +325,6 @@ namespace cSharpInfosoftTutorial
 }
 
 Studied Lessons with Output:
- * Lesson 14: Abstraction | OOP
- * Lesson 15: Exception Handling
- * Lesson 16: Collections (List and Dictionary)
+ * Lesson 17: Delegates and Events
+Still Studying Lesson:
+ * Lesson 18: Asynchronous Programming
