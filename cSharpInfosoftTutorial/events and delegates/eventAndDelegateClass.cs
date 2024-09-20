@@ -8,25 +8,41 @@ namespace cSharpInfosoftTutorial.events_and_delegates
 {
     class eventAndDelegateClass
     {
-        public delegate string MyDel(string str);
+        public delegate int MyDel(int str);
         public event MyDel myEvent;
         public static void Main()
         {
-            EventProgram obj1 = new EventProgram();
-            string result = obj1.MyEvent("Event");
-            Console.WriteLine(result);
+            try
+            {
+                Console.WriteLine("Check Your Lucky Number Today!");
+                Console.WriteLine("=================================================");
+                Console.Write("Entry (numeric 1 - 100): ");
+
+                int num = Convert.ToInt32(Console.ReadLine());
+                EventProgram obj1 = new EventProgram();
+                int result = obj1.MyEvent(num);
+
+                if (result == num) Console.WriteLine("\nYour luck is in the air today—seize the moment!");
+                else  Console.WriteLine("\nIt seems luck is taking a break today, but keep pushing forward!");
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Invalid entry, it must be numeric (whole number/s)");
+            }
         }
         class EventProgram
         {
             public EventProgram()
             {
-                this.MyEvent += new MyDel(this.WelcomeUser);
+                this.MyEvent += new MyDel(this.Randomizer);
             }
             public MyDel MyEvent { get; set; }
 
-            public string WelcomeUser(string username)
+            public int Randomizer(int result)
             {
-                return "Welcome " + username;
+                Random rnd = new Random();
+                result = rnd.Next(1, 101);
+                return result;
             }
         }
     }

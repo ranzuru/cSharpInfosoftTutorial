@@ -16,8 +16,7 @@ class Program
         bool loop = true;
         while (loop)
         {
-            
-            Console.WriteLine("C# PROGRAMMING LESSON OUTPUT");
+            Console.WriteLine("C# PROGRAMMING LESSON");
             Console.WriteLine("==========================================================");
             Console.WriteLine("[1] Introduction to C#");
             Console.WriteLine("[2] Variables and Data Types");
@@ -29,7 +28,7 @@ class Program
             Console.WriteLine("[7.2] Loops - While Loop");
             Console.WriteLine("[8] Arrays (Collections)");
             Console.WriteLine("[9] Functions");
-            Console.WriteLine("[10.1] Object-Oriented Programming (OOP) - Classes & Objects, and Cnstructors");
+            Console.WriteLine("[10.1] Object-Oriented Programming (OOP) - Classes & Objects, and Constructors");
             Console.WriteLine("[10.2] Object-Oriented Programming (OOP) - Object Methods");
             Console.WriteLine("[11] Inheritance");
             Console.WriteLine("[12] Encapsulation");
@@ -43,8 +42,8 @@ class Program
             Console.WriteLine("[18] Asynchronous Programming");
             Console.WriteLine("[19] Working with Strings");
             Console.WriteLine("[0] Exit");
-            Console.Write("\nSelect a Lesson: ");
             
+            Console.Write("\nSelect a Lesson: ");
             double selection;
             
             if (double.TryParse(Console.ReadLine(), out selection))
@@ -53,7 +52,6 @@ class Program
                 switch (selection)
                 {
                     case 1:
-                        
                         introductionClass.Main();
                         break;
                     case 2:
@@ -71,28 +69,27 @@ class Program
                     case 6:
                         switchClass.Main();
                         break;
-
-                    // LOOPS ====================
+                    // LOOPS 
                     case 7.1:
                         forLoopClass.Main();
                         break;
                     case 7.2:
                         whileLoopClass.Main();
                         break;
-
+                    case 8:
+                        arraysClass.Main();
+                        break;
                     case 9:
                         functionClass.Main();
                         break;
-
-                    // OOP BASICS ===============
+                    // OOP BASICS 
                     case 10.1:
                         oopBasics1and2Class.Main();
                         break;
                     case 10.2:
                         oopBasics3Class.Main();
                         break;
-
-                    // OOP =======================
+                    // OOP 
                     case 11:
                         inheritanceMainClass.Main();
                         break;
@@ -109,18 +106,13 @@ class Program
                     case 15:
                         exceptionHandlingClass.Main();
                         break;
-
-                    // COLLECTIONS ===============
-                    case 8:
-                        arraysClass.Main();
-                        break;
+                    // COLLECTIONS 
                     case 16.1:
                         listClass.Main();
                         break;
                     case 16.2:
                         dictionaryClass.Main();
                         break;
-
                     // EVENTS AND DELEGATES
                     case 17.1:
                         delegatesClass.Main();
@@ -130,7 +122,7 @@ class Program
                         break;
 
                     case 18:
-                        asyncAwaitTaskClass.Main();
+                        Task.Run(async () => await asyncAwaitTaskClass.Main()).Wait();
                         break;
                     case 19:
                         workingWithStringClass.Main();
@@ -139,18 +131,22 @@ class Program
                     case 0:
                         loop = false;
                         break;
-
                     default:
-                        Console.WriteLine("\nInvalid lesson section.");
+                        Console.WriteLine("\nInvalid lesson selected. Choose among the given selections.");
                         break;
                 }
             }
-            else Console.WriteLine("\nInvalid input. Please enter a valid number.\n");
+            else
+            {
+                Console.Clear();
+                Console.WriteLine("\nInvalid input. Use numeric character indicated on each selections.\n");
+            }
 
             if (selection != 0)
             {
                 Console.WriteLine("\n\nPress Enter to return to the menu...");
                 Console.ReadLine();
+                Console.Clear();
             }
         }
     }

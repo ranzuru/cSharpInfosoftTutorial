@@ -10,10 +10,14 @@ namespace cSharpInfosoftTutorial
     {
         public static void Main()
         {
-
-            Console.WriteLine("sample");    
+            Console.WriteLine("Using WriteLine:");
+            Console.WriteLine("sample");
+            Console.WriteLine("Output");
+            Console.WriteLine("Using Write:");
             Console.Write("sample");         
-            Console.Write("Output");        
+            Console.Write("Output");
+            Console.WriteLine("\nUsing Write with newline(\\n):");
+            Console.Write("sample");
             Console.Write("\noutput");      
         }
     }
