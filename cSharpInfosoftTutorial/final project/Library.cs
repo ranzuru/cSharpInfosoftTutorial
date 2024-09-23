@@ -11,25 +11,24 @@ namespace cSharpInfosoftTutorial.final_project
     class Library
     {
         private Dictionary<int, Book> library = new Dictionary<int, Book>();
-        private List<Borrower> borrowers = new List<Borrower>();
-        
-        public static bool availableBooks = false;
-
+        private int nextId = 1;
         public void AddBook(Book book)
         {
-            int key = library.Count;
-            key++;
-            library.Add(key, book);
-            Console.WriteLine("Added Book");
+            book.Id = nextId;
+            library.Add(book.Id, book);
+            Console.WriteLine("\nAdded Book");
             Console.WriteLine("============================");
-            Console.WriteLine("Title: " + book.Title);
+            Console.WriteLine("ID    : " + book.Id);
+            Console.WriteLine("Title : " + book.Title);
             Console.WriteLine("Author: " + book.Author);
+            nextId++;
         }
 
         public void ViewAvailableBooks()
         {
-            Console.WriteLine("Available Book/s Information");
+            Console.WriteLine("\nAvailable Book/s Information");
             Console.WriteLine("============================");
+            bool availableBooks = false;
             foreach (var book in library.Values)
             {
                 string status;
@@ -37,6 +36,7 @@ namespace cSharpInfosoftTutorial.final_project
                 {
                     availableBooks = true;
                     status = "Available";
+                    Console.WriteLine("ID    : " + book.Id);
                     Console.WriteLine("Title : " + book.Title);
                     Console.WriteLine("Author: " + book.Author);
                     Console.WriteLine("Status: " + status);
@@ -49,15 +49,17 @@ namespace cSharpInfosoftTutorial.final_project
         }
         public void ViewBorrowedBooks()
         {
-            Console.WriteLine("Borrowed Book/s Information");
+            Console.WriteLine("\nBorrowed Book/s Information");
             Console.WriteLine("============================");
+            bool borrowedBooks = true;
             foreach (var book in library.Values)
             {
                 string status;
                 if (book.IsBorrowed == true)
                 {
-                    availableBooks = true;
+                    borrowedBooks = false;
                     status = "Borrowed";
+                    Console.WriteLine("ID    : " + book.Id);
                     Console.WriteLine("Title : " + book.Title);
                     Console.WriteLine("Author: " + book.Author);
                     Console.WriteLine("Status: " + status);
@@ -65,35 +67,33 @@ namespace cSharpInfosoftTutorial.final_project
                 }
                 
             }
-            if (availableBooks) Console.WriteLine("No Borrowed Books.\n");
+            if (borrowedBooks) Console.WriteLine("No Borrowed Books.\n");
             Console.WriteLine("Press Enter to return to the main menu...");
             Console.ReadLine();
         }
 
-        public void BorrowBook(int BookId, string fullName, string email, string mobile)
+        public void BorrowBook(int BookId)
         {
             if (library.ContainsKey(BookId))
             {
                 if (library[BookId].IsBorrowed)
                 {
-                    throw new Exception("Book is currently borrowed.");
+                    Console.WriteLine("\n" + "Book is currently borrowed." + "\n");
                 }
                 else
                 {
                     library[BookId].IsBorrowed = true;
 
-                    var borrower = new Borrower(fullName, email, mobile);
-                    borrowers.Add(borrower);
-
-                    Console.WriteLine("Borrowed Book");
+                    Console.WriteLine("\nBorrowed Book");
                     Console.WriteLine("============================");
+                    Console.WriteLine("ID    : " + library[BookId].Id);
                     Console.WriteLine("Title : " + library[BookId].Title);
-                    Console.WriteLine("Author: " + library[BookId].Author);
+                    Console.WriteLine("Author: " + library[BookId].Author + "\n");
                 }
             }
             else
             {
-                throw new Exception("Book not found.");
+                Console.WriteLine("Book not found.");
             }
         }
 
@@ -103,20 +103,21 @@ namespace cSharpInfosoftTutorial.final_project
             {
                 if (!library[BookId].IsBorrowed)
                 {
-                    throw new Exception("Borrowed book not yet returned.");
+                    Console.WriteLine("\n" + "Book is not borrowed." + "\n");
                 }
                 else
                 {
                     library[BookId].IsBorrowed = false;
-                    Console.WriteLine("Returned Book");
+                    Console.WriteLine("\nReturned Book");
                     Console.WriteLine("============================");
+                    Console.WriteLine("ID    : " + library[BookId].Id);
                     Console.WriteLine("Title : " + library[BookId].Title);
-                    Console.WriteLine("Author: " + library[BookId].Author);
+                    Console.WriteLine("Author: " + library[BookId].Author + "\n");
                 }
             }
             else
             {
-                throw new Exception("Book not found.");
+                Console.WriteLine("Book not found.");
             }
         }
     }

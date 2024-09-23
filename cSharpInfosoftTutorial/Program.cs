@@ -8,7 +8,7 @@ using cSharpInfosoftTutorial.abstraction;
 using cSharpInfosoftTutorial.collections;
 using cSharpInfosoftTutorial.events_and_delegates;
 using cSharpInfosoftTutorial.async_await_task;
-
+using cSharpInfosoftTutorial.final_project;
 class Program
 {
     public static void Main()
@@ -41,6 +41,7 @@ class Program
             Console.WriteLine("[17.2] Delegates and Events - Delegates and Events");
             Console.WriteLine("[18] Asynchronous Programming");
             Console.WriteLine("[19] Working with Strings");
+            Console.WriteLine("[20] Final Project - Library System");
             Console.WriteLine("[0] Exit");
             
             Console.Write("\nSelect a Lesson: ");
@@ -127,7 +128,9 @@ class Program
                     case 19:
                         workingWithStringClass.Main();
                         break;
-
+                    case 20:
+                        consoleLibrarySystem.Main();
+                        break;
                     case 0:
                         loop = false;
                         break;

@@ -14,7 +14,6 @@ namespace cSharpInfosoftTutorial.final_project
         public bool IsBorrowed { get; set; }
         public Book (string Title, string Author)
         {
-            Id = 0;
             this.Title = Title;
             this.Author = Author;
             IsBorrowed = false;

@@ -18,11 +18,11 @@ namespace cSharpInfosoftTutorial.final_project
             library.AddBook(new Book("The Brothers Karamazov", "Fyodor Mikhailovich Dostoevsky"));
             library.AddBook(new Book("The Nameless Monster", "Emil Sherbet"));
             
-
+            Console.WriteLine("\n");
             bool loop = true;
+            
             while (loop)
             {
-                Console.Clear();
                 Console.WriteLine("Console Library System");
                 Console.WriteLine("========================================");
                 Console.WriteLine("[1] View Available Book/s");
@@ -37,7 +37,6 @@ namespace cSharpInfosoftTutorial.final_project
 
                 if (int.TryParse(Console.ReadLine(), out option))
                 {
-                    Console.Clear();
                     switch (option)
                     {
                         case 1:
@@ -47,16 +46,17 @@ namespace cSharpInfosoftTutorial.final_project
                             library.ViewBorrowedBooks();
                             break;
                         case 3:
-                            ProcessBooks.AddNewBook();
+                            ProcessBooks.AddNewBook(library);
                             break;
                         case 4:
-                            ProcessBooks.ReturnBook();
+                            ProcessBooks.ReturnBook(library);
                             break;
                         case 5:
-                            ProcessBooks.BorrowBook();
+                            ProcessBooks.BorrowBook(library);
                             break;
                         case 0:
                             loop = false;
+                            Console.Clear();
                             break;
                         default:
                             Console.WriteLine("Invalid option selected! Use the given option. Please try again.");
@@ -65,15 +65,7 @@ namespace cSharpInfosoftTutorial.final_project
                 } 
                 else
                 {
-                    Console.Clear();
                     Console.WriteLine("\nInvalid option input! Use the indicated numeric character. Please try again.\n");
-                }
-
-                if (option == 0)
-                {
-                    Console.WriteLine("\nPress Enter to return to the main menu...");
-                    Console.ReadLine();
-                    Console.Clear();
                 }
             }
         }
